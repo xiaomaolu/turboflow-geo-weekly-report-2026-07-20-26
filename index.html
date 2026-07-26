@@ -1,0 +1,2674 @@
+<!doctype html>
+<html lang="zh-CN" data-report-id="turboflow-geo-weekly-2026-07-20-to-2026-07-26" data-view-mode="readonly">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23245de8'/%3E%3Cpath d='M13 18h38v9H37v24H27V27H13z' fill='white'/%3E%3C/svg%3E">
+  <title>TurboFlow GEO 周报｜2026/07/20–2026/07/26｜公开浏览版</title>
+  <style>
+    :root {
+      --blue: #245de8;
+      --blue-dark: #1746bc;
+      --blue-soft: #f3f7ff;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #dce3ee;
+      --line-strong: #c8d3e3;
+      --surface: #ffffff;
+      --danger: #c93636;
+      --radius: 10px;
+      --shadow: 0 16px 50px rgba(27, 46, 94, 0.08);
+      --font: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f6f8fc;
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    button,
+    input,
+    textarea,
+    select { font: inherit; }
+
+    button { cursor: pointer; }
+
+    html[data-view-mode="readonly"] .app-toolbar,
+    html[data-view-mode="readonly"] .website-update-actions,
+    html[data-view-mode="readonly"] .row-actions,
+    html[data-view-mode="readonly"] .upload-zone,
+    html[data-view-mode="readonly"] .remove-image,
+    html[data-view-mode="readonly"] .compact-action,
+    html[data-view-mode="readonly"] .ai-highlight-palette,
+    html[data-view-mode="readonly"] .backlink-actions-column,
+    html[data-view-mode="readonly"] .history-report-remove,
+    html[data-view-mode="readonly"] #addHistoryReport,
+    html[data-view-mode="readonly"] .status-message {
+      display: none !important;
+    }
+
+    html[data-view-mode="readonly"] [contenteditable] {
+      cursor: default;
+      outline: 0;
+    }
+
+    html[data-view-mode="readonly"] .report-shell {
+      margin-top: 24px;
+    }
+
+    html[data-view-mode="readonly"] .ai-matrix-help::before {
+      background: #4d6fba;
+    }
+
+    html[data-view-mode="readonly"] .readonly-value {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      color: inherit;
+      overflow-wrap: anywhere;
+    }
+
+    html[data-view-mode="readonly"] [data-readonly-source] {
+      display: none !important;
+    }
+
+    html[data-view-mode="readonly"] .period-fields .readonly-value {
+      width: auto;
+      min-width: 112px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #f8faff;
+      text-align: center;
+      font-weight: 680;
+    }
+
+    html[data-view-mode="readonly"] .website-update-row {
+      grid-template-columns: 22px 1fr;
+    }
+
+    html[data-view-mode="readonly"] .website-update-row .readonly-value {
+      padding: 9px 11px;
+    }
+
+    html[data-view-mode="readonly"] .metric .readonly-value {
+      margin-top: 7px;
+      color: var(--blue);
+      font-size: 30px;
+      font-weight: 780;
+      line-height: 1.1;
+    }
+
+    html[data-view-mode="readonly"] .actions-table .readonly-value {
+      padding: 3px 0;
+    }
+
+    html[data-view-mode="readonly"] .backlink-table .readonly-value {
+      line-height: 1.45;
+    }
+
+    html[data-view-mode="readonly"] .backlink-url-editor {
+      display: block;
+    }
+
+    html[data-view-mode="readonly"] .backlink-preview-link {
+      display: inline-flex;
+      min-width: 72px;
+      justify-content: center;
+    }
+
+    html[data-view-mode="readonly"] .history-report-row {
+      grid-template-columns: 126px 14px 126px minmax(220px, 1fr) auto;
+    }
+
+    html[data-view-mode="readonly"] .history-report-row > .readonly-value {
+      align-self: center;
+      padding: 7px 9px;
+      border: 1px solid #d5deeb;
+      border-radius: 7px;
+      background: #fff;
+      font-size: 11px;
+    }
+
+    html[data-view-mode="readonly"] .history-report-url-value {
+      color: #31558c;
+    }
+
+    html[data-view-mode="readonly"] .upload-panel {
+      cursor: default;
+    }
+
+    html[data-view-mode="readonly"] .matrix-image-gallery .image-card::after {
+      content: "点击查看原图";
+    }
+
+    html[data-view-mode="readonly"] .matrix-note {
+      min-height: 0;
+      padding: 8px 0 0;
+      border: 0;
+      background: transparent;
+    }
+
+    html[data-view-mode="readonly"] .matrix-note:empty {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      html[data-view-mode="readonly"] .history-report-row {
+        grid-template-columns: 1fr 14px 1fr;
+      }
+
+      html[data-view-mode="readonly"] .history-report-url-value {
+        grid-column: 1 / -1;
+      }
+
+      html[data-view-mode="readonly"] .history-report-open {
+        grid-column: 1 / -1;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 620px) {
+      html[data-view-mode="readonly"] .history-report-row {
+        grid-template-columns: 1fr 12px 1fr;
+      }
+    }
+
+    .app-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px max(20px, calc((100vw - 1560px) / 2));
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+    }
+
+    .toolbar-title {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      min-width: max-content;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+    }
+
+    .toolbar-title .brand { color: var(--blue); font-size: 21px; }
+    .toolbar-title .name { font-size: 18px; }
+
+    .autosave-status {
+      margin-left: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .button {
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      color: #344054;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 650;
+      transition: border-color 150ms ease, color 150ms ease, background 150ms ease, transform 150ms ease;
+    }
+
+    .button:hover { border-color: #98a9c4; color: var(--ink); }
+    .button:active { transform: translateY(1px); }
+    .button.primary { color: #fff; border-color: var(--blue); background: var(--blue); }
+    .button.primary:hover { border-color: var(--blue-dark); background: var(--blue-dark); }
+    .button.danger { color: var(--danger); border-color: #efb5b5; }
+
+    .report-shell {
+      width: min(1560px, calc(100% - 32px));
+      margin: 24px auto 56px;
+      padding: 38px 42px 50px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .report-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .report-header h1 {
+      margin: 0;
+      font-size: clamp(29px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .report-header h1 span { color: var(--blue); }
+
+    .report-subtitle {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .period-fields {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-items: center;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .field-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    input[type="date"],
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: 7px;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus,
+    [contenteditable="true"]:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(36, 93, 232, 0.1);
+    }
+
+    .report-section {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .report-section:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 17px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--blue-dark);
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .summary-item {
+      min-height: 142px;
+      padding: 18px;
+      background: var(--blue-soft);
+    }
+
+    .summary-item:nth-child(2n) { border-left: 1px solid var(--line); }
+    .summary-item:nth-child(n + 3) { border-top: 1px solid var(--line); }
+
+    .summary-label {
+      margin-bottom: 8px;
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .metric-label[contenteditable="true"] {
+      border-radius: 5px;
+      cursor: text;
+      outline: none;
+    }
+
+    .metric-label[contenteditable="true"]:focus {
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(42, 101, 238, 0.18);
+    }
+
+    [data-editable-label] {
+      cursor: text;
+      border-radius: 5px;
+      outline: none;
+      transition: background 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    [data-editable-label]:hover { background: rgba(255, 255, 255, 0.56); }
+    [data-editable-label]:focus {
+      background: #fff;
+      box-shadow: 0 0 0 2px rgba(42, 101, 238, 0.18);
+    }
+
+    .editable-block {
+      min-height: 82px;
+      padding: 10px 11px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      color: #344054;
+      background: rgba(255, 255, 255, 0.85);
+      outline: none;
+      white-space: pre-wrap;
+    }
+
+    .editable-block:empty::before,
+    .editable-cell:empty::before {
+      color: #98a2b3;
+      content: attr(data-placeholder);
+      pointer-events: none;
+    }
+
+    .website-update-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .website-update-row {
+      display: grid;
+      grid-template-columns: 22px 1fr 28px;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .website-update-index {
+      color: var(--blue-dark);
+      font-size: 11px;
+      font-weight: 760;
+      text-align: center;
+    }
+
+    .website-update-row input {
+      min-height: 34px;
+      border-color: #d6dfed;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .compact-action {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 1px solid #d8e0ec;
+      border-radius: 6px;
+      color: var(--muted);
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .website-update-actions { margin-top: 8px; }
+
+    .table-wrap {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      padding: 11px 12px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th:last-child,
+    td:last-child { border-right: 0; }
+    tbody tr:last-child td { border-bottom: 0; }
+
+    th {
+      color: #344054;
+      background: #f8faff;
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    td.platform-cell {
+      width: 115px;
+      color: var(--ink);
+      font-weight: 720;
+      white-space: nowrap;
+    }
+
+    .platform-region {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .editable-cell {
+      min-height: 52px;
+      padding: 5px 6px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      outline: none;
+      white-space: pre-wrap;
+    }
+
+    .question-columns {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 18px;
+    }
+
+    .question-group {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .question-group h3 {
+      margin: 0;
+      padding: 12px 14px;
+      color: var(--blue-dark);
+      background: var(--blue-soft);
+      font-size: 14px;
+    }
+
+    .question-list {
+      margin: 0;
+      padding: 6px 14px 9px 42px;
+    }
+
+    .question-list li { padding: 8px 4px; border-bottom: 1px dashed var(--line); }
+    .question-list li:last-child { border-bottom: 0; }
+
+    .question-text {
+      display: block;
+      min-height: 24px;
+      padding: 2px 4px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .ai-matrix-wrap {
+      position: relative;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overscroll-behavior-inline: contain;
+      scrollbar-color: #aebbd0 #eef2f7;
+      scrollbar-width: thin;
+    }
+
+    .ai-matrix-table {
+      --matrix-question-width: 230px;
+      --matrix-platform-width: 207px;
+      --matrix-image-height: 230px;
+      min-width: calc(var(--matrix-question-width) + 6 * var(--matrix-platform-width));
+      table-layout: fixed;
+    }
+
+    .ai-matrix-wrap[data-view="reading"] .ai-matrix-table {
+      --matrix-question-width: 250px;
+      --matrix-platform-width: 330px;
+      --matrix-image-height: 390px;
+    }
+
+    .ai-matrix-table .question-column { width: var(--matrix-question-width); }
+    .ai-matrix-table .platform-column { width: var(--matrix-platform-width); text-align: center; }
+
+    .ai-matrix-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 0 0 10px;
+    }
+
+    .ai-matrix-help {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 620;
+    }
+
+    .ai-matrix-help::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+      content: "";
+    }
+
+    .matrix-view-toggle {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f5f7fb;
+    }
+
+    .matrix-view-button {
+      min-width: 58px;
+      padding: 5px 10px;
+      border: 0;
+      border-radius: 6px;
+      color: #667085;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 720;
+    }
+
+    .matrix-view-button:hover { color: #344054; }
+
+    .matrix-view-button.active {
+      color: #173d9e;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(31, 50, 81, 0.15);
+    }
+
+    .ai-matrix-table th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .ai-matrix-table th:first-child,
+    .ai-matrix-table td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: #fff;
+    }
+
+    .ai-matrix-table th:first-child {
+      z-index: 3;
+      background: #f8faff;
+      text-align: left;
+    }
+
+    .ai-matrix-table tbody tr:nth-child(even) td:not([data-highlight]) { background: #fbfcfe; }
+    .ai-matrix-table tbody tr:nth-child(even) td:first-child:not([data-highlight]) { background: #fbfcfe; }
+
+    .ai-question-cell {
+      padding: 12px;
+      transition: background 150ms ease, box-shadow 150ms ease;
+    }
+
+    .ai-question-meta {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 6px;
+    }
+
+    .ai-question-number {
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .ai-question-category {
+      padding: 2px 6px;
+      border-radius: 999px;
+      color: #42639f;
+      background: #edf3ff;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .ai-question-cell .question-text {
+      min-height: 46px;
+      color: #253858;
+      font-weight: 620;
+    }
+
+    .ai-screenshot-cell {
+      position: relative;
+      padding: 6px;
+      transition: background 150ms ease, box-shadow 150ms ease;
+    }
+
+    .ai-matrix-table td[data-highlight] {
+      --highlight-background: #fff7d6;
+      --highlight-accent: #d99a00;
+      background: var(--highlight-background);
+      box-shadow: inset 4px 0 0 var(--highlight-accent);
+    }
+
+    .ai-matrix-table td[data-highlight="red"] {
+      --highlight-background: #fff0f0;
+      --highlight-accent: #dc4949;
+    }
+
+    .ai-matrix-table td[data-highlight="green"] {
+      --highlight-background: #edf9f1;
+      --highlight-accent: #20965a;
+    }
+
+    .ai-matrix-table td[data-highlight="blue"] {
+      --highlight-background: #eef4ff;
+      --highlight-accent: #2a65ee;
+    }
+
+    .ai-matrix-table td[data-highlight="purple"] {
+      --highlight-background: #f6efff;
+      --highlight-accent: #8b5cf6;
+    }
+
+    .ai-matrix-table td[data-highlight] .matrix-upload-panel {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .ai-highlight-palette {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid rgba(133, 151, 184, 0.34);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 5px 18px rgba(31, 50, 81, 0.16);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-3px);
+      transition: opacity 130ms ease, transform 130ms ease;
+    }
+
+    .ai-matrix-table td:hover > .ai-highlight-palette,
+    .ai-matrix-table td:focus-within > .ai-highlight-palette {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .ai-highlight-swatch,
+    .ai-highlight-clear {
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      border: 1px solid rgba(41, 55, 80, 0.16);
+      border-radius: 50%;
+      background: var(--swatch, #fff);
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+
+    .ai-highlight-swatch:hover,
+    .ai-highlight-swatch:focus-visible,
+    .ai-highlight-clear:hover,
+    .ai-highlight-clear:focus-visible {
+      outline: none;
+      transform: scale(1.14);
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(36, 93, 232, 0.28);
+    }
+
+    .ai-highlight-swatch[data-highlight-color="yellow"] { --swatch: #f6c945; }
+    .ai-highlight-swatch[data-highlight-color="red"] { --swatch: #ef7474; }
+    .ai-highlight-swatch[data-highlight-color="green"] { --swatch: #5fc88d; }
+    .ai-highlight-swatch[data-highlight-color="blue"] { --swatch: #6595f5; }
+    .ai-highlight-swatch[data-highlight-color="purple"] { --swatch: #a887e8; }
+
+    .ai-highlight-clear {
+      display: grid;
+      place-items: center;
+      color: #5e6b82;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .ai-highlight-swatch[aria-pressed="true"] {
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--highlight-accent, #245de8);
+    }
+
+    .matrix-upload-panel {
+      min-height: 112px;
+      margin: 0;
+      padding: 5px;
+      border-radius: 8px;
+    }
+
+    .matrix-upload-panel:hover { background: #f8faff; }
+
+    .matrix-upload-zone {
+      min-height: 96px;
+      padding: 10px;
+      border-color: #b8c7e3;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .matrix-upload-zone strong {
+      display: block;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .matrix-upload-zone small {
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .matrix-upload-panel.has-image .matrix-upload-zone { display: none; }
+
+    .image-gallery.matrix-image-gallery {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .matrix-upload-panel.has-image .image-gallery.matrix-image-gallery { margin-top: 0; }
+    .matrix-image-gallery .image-card { width: 100%; }
+    .matrix-image-gallery .image-card img {
+      height: var(--matrix-image-height);
+      object-fit: cover;
+      object-position: top center;
+      cursor: zoom-in;
+      transition: opacity 150ms ease;
+    }
+
+    .ai-matrix-wrap[data-view="reading"] .matrix-image-gallery .image-card img {
+      object-fit: contain;
+      background: #f7f9fc;
+    }
+
+    .matrix-image-gallery .image-card::after {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 4px 7px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 6px;
+      color: #fff;
+      background: rgba(22, 32, 51, 0.7);
+      box-shadow: 0 3px 10px rgba(22, 32, 51, 0.15);
+      content: "点击查看原图";
+      font-size: 10px;
+      font-weight: 680;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-3px);
+      transition: opacity 130ms ease, transform 130ms ease;
+    }
+
+    .matrix-image-gallery .image-card:hover::after,
+    .matrix-image-gallery .image-card:focus-within::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .matrix-image-gallery .image-card:hover img { opacity: 0.96; }
+    .matrix-image-gallery .image-card figcaption { display: none; }
+    .matrix-image-gallery .remove-image {
+      top: 7px;
+      right: 7px;
+      bottom: auto;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 130ms ease, transform 130ms ease;
+    }
+
+    .matrix-image-gallery .image-card:hover .remove-image,
+    .matrix-image-gallery .image-card:focus-within .remove-image {
+      opacity: 1;
+    }
+
+    .matrix-image-gallery .remove-image:hover { transform: scale(1.08); }
+
+    .matrix-note {
+      min-height: 38px;
+      margin-top: 6px;
+      padding: 7px 8px;
+      border: 1px solid #d8e0ec;
+      border-radius: 6px;
+      color: #475467;
+      background: #fff;
+      font-size: 11px;
+      line-height: 1.45;
+      outline: none;
+      white-space: pre-wrap;
+    }
+
+    .matrix-note:empty::before {
+      color: #98a2b3;
+      content: "备注";
+      pointer-events: none;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .metric {
+      padding: 16px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .metric + .metric { border-left: 1px solid var(--line); }
+    .metric-label { margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 700; }
+
+    .metric input {
+      min-height: 42px;
+      border-color: transparent;
+      background: var(--blue-soft);
+      text-align: center;
+      font-size: 19px;
+      font-weight: 760;
+    }
+
+    .content-metrics { grid-template-columns: repeat(2, 1fr); }
+
+    .metric input[readonly] { cursor: default; }
+
+    .backlink-block { margin-top: 18px; }
+
+    .backlink-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 9px;
+    }
+
+    .backlink-heading h3 {
+      margin: 0;
+      color: #344054;
+      font-size: 13px;
+    }
+
+    .backlink-table { table-layout: auto; }
+    .backlink-table th,
+    .backlink-table td { padding: 9px 10px; }
+    .backlink-table td { font-size: 12px; }
+    .backlink-table .category-column { width: 108px; color: var(--blue-dark); font-weight: 720; }
+    .backlink-table .platform-column { width: 170px; font-weight: 700; }
+    .backlink-title {
+      color: #253858;
+      font-weight: 620;
+      text-decoration: none;
+    }
+
+    .backlink-title:hover { color: var(--blue); text-decoration: underline; }
+
+    .backlink-open {
+      display: inline-block;
+      min-width: 54px;
+      color: var(--blue);
+      font-weight: 720;
+      text-decoration: none;
+    }
+
+    .backlink-editable {
+      width: 100%;
+      min-height: 34px;
+      padding: 6px 8px;
+      border-color: transparent;
+      background: transparent;
+      font-size: 12px;
+    }
+
+    .backlink-editable:focus {
+      border-color: var(--blue);
+      background: #fff;
+    }
+
+    .backlink-table .backlink-actions-column {
+      width: 58px;
+      text-align: center;
+    }
+
+    .backlink-url-editor {
+      display: grid;
+      grid-template-columns: minmax(170px, 1fr) auto;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .backlink-preview-link {
+      color: var(--blue);
+      font-weight: 720;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .backlink-preview-link[aria-disabled="true"] {
+      color: #98a2b3;
+      pointer-events: none;
+    }
+
+    .backlink-remove {
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 1px solid #efb5b5;
+      border-radius: 6px;
+      color: var(--danger);
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .backlink-table tr.featured-row td {
+      background: #edf4ff;
+      border-top-color: #9eb9f2;
+      border-bottom-color: #9eb9f2;
+    }
+
+    .backlink-table tr.featured-row td:first-child {
+      box-shadow: inset 4px 0 0 var(--blue);
+    }
+
+    .backlink-table tr.featured-row .platform-column::after {
+      content: "重点";
+      margin-left: 8px;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 780;
+    }
+
+    .section-note {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 12px;
+      margin-top: 14px;
+      align-items: start;
+    }
+
+    .section-note .editable-block { min-height: 58px; border-color: var(--line); background: #fff; }
+
+    .ai-conclusion-note { margin: 0 0 18px; }
+
+    .upload-panel {
+      margin: 16px -12px 0;
+      padding: 12px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      outline: none;
+      transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+    }
+
+    .upload-panel:hover {
+      border-color: #c9d6ee;
+      background: #fbfcff;
+    }
+
+    .upload-panel.active,
+    .upload-panel:focus-visible {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+      box-shadow: 0 0 0 3px rgba(36, 93, 232, 0.09);
+    }
+
+    .upload-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      color: #344054;
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .upload-panel.active .upload-label::after {
+      content: "已选中，可按 Ctrl+V";
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 720;
+    }
+
+    .upload-zone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 102px;
+      padding: 18px;
+      border: 1.5px dashed #91a9d8;
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: #fbfcff;
+      text-align: center;
+      transition: border-color 150ms ease, background 150ms ease;
+    }
+
+    .upload-zone.dragover { border-color: var(--blue); background: var(--blue-soft); }
+    .upload-zone.active { border-color: var(--blue); background: var(--blue-soft); box-shadow: 0 0 0 3px rgba(36, 93, 232, 0.08); }
+    .upload-panel.has-image .upload-zone { display: none; }
+    .upload-zone input { display: none; }
+    .upload-zone strong { color: var(--blue); }
+    .upload-zone small { display: block; margin-top: 4px; }
+
+    .upload-file-button { margin-top: 10px; }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .image-card {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: 170px;
+      object-fit: contain;
+      cursor: zoom-in;
+      background: #f4f6fa;
+    }
+
+    .image-card figcaption {
+      min-height: 36px;
+      padding: 8px 42px 8px 10px;
+      color: var(--muted);
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .remove-image {
+      position: absolute;
+      right: 7px;
+      bottom: 6px;
+      width: 27px;
+      height: 27px;
+      border: 1px solid #efb5b5;
+      border-radius: 6px;
+      color: var(--danger);
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(11, 18, 32, 0.84);
+      backdrop-filter: blur(4px);
+    }
+
+    .image-lightbox.open { display: flex; }
+
+    .image-lightbox-dialog {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(1400px, 96vw);
+      height: min(920px, 92vh);
+    }
+
+    .image-lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+      object-fit: contain;
+    }
+
+    .image-lightbox-close {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      z-index: 1;
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      color: #172033;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    body.lightbox-open { overflow: hidden; }
+
+    .actions-table input,
+    .actions-table select {
+      min-height: 34px;
+      padding: 6px 8px;
+      border-color: transparent;
+      background: transparent;
+    }
+
+    .actions-table input:focus,
+    .actions-table select:focus { border-color: var(--blue); background: #fff; }
+
+    .history-reports {
+      margin: 8px 0 14px;
+      padding: 14px;
+      border: 1px solid #d7e1f0;
+      border-radius: 10px;
+      background: #f8faff;
+    }
+
+    .history-reports-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .history-reports-title {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+    }
+
+    .history-reports h3 {
+      margin: 0;
+      color: #253858;
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .history-reports-caption {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .history-report-list {
+      display: grid;
+      gap: 7px;
+    }
+
+    .history-report-row {
+      display: grid;
+      grid-template-columns: 142px 14px 142px minmax(260px, 1fr) auto auto;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .history-report-row input {
+      min-height: 34px;
+      padding: 6px 8px;
+      border-color: #cfd9e8;
+      background: #fff;
+      font-size: 11px;
+    }
+
+    .history-period-separator {
+      color: #98a2b3;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .history-report-open {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 10px;
+      border: 1px solid #bfd0f1;
+      border-radius: 7px;
+      color: #1746bc;
+      background: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .history-report-open:hover { border-color: #7fa2ea; background: #f3f7ff; }
+    .history-report-open[aria-disabled="true"] { color: #98a2b3; pointer-events: none; }
+
+    .history-report-remove {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid #efb5b5;
+      border-radius: 7px;
+      color: var(--danger);
+      background: #fff;
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .row-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .status-message {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      max-width: min(390px, calc(100vw - 40px));
+      padding: 11px 14px;
+      border: 1px solid #b7c8ef;
+      border-radius: 8px;
+      color: #173d9e;
+      background: #eef4ff;
+      box-shadow: 0 12px 28px rgba(36, 93, 232, 0.14);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .status-message.show { opacity: 1; transform: translateY(0); }
+
+    .report-footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .app-toolbar { align-items: flex-start; }
+      .toolbar-actions { gap: 6px; }
+      .button { padding-inline: 10px; }
+      .report-shell { width: calc(100% - 20px); padding: 28px 20px 38px; }
+      .report-header { align-items: flex-start; flex-direction: column; }
+      .summary-grid,
+      .question-columns { grid-template-columns: 1fr; }
+      .summary-item:nth-child(2n) { border-left: 0; }
+      .summary-item:nth-child(n + 2) { border-top: 1px solid var(--line); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .metric:nth-child(4) { border-top: 1px solid var(--line); }
+      .content-metrics { grid-template-columns: repeat(2, 1fr); }
+      .image-gallery { grid-template-columns: repeat(2, 1fr); }
+      .history-report-row { grid-template-columns: 1fr 14px 1fr; }
+      .history-report-url { grid-column: 1 / -1; }
+      .history-report-open { grid-column: 1 / 3; justify-content: center; }
+    }
+
+    @media (max-width: 620px) {
+      body { background: #fff; }
+      .app-toolbar { position: static; flex-direction: column; }
+      .toolbar-actions { width: 100%; justify-content: flex-start; }
+      .button { flex: 1 1 auto; }
+      .report-shell { width: 100%; margin: 0; padding: 24px 14px 34px; border: 0; box-shadow: none; }
+      .period-fields { width: 100%; grid-template-columns: 1fr auto 1fr; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .metrics-grid,
+      .content-metrics { grid-template-columns: 1fr; }
+      .metric + .metric,
+      .metric:nth-child(3),
+      .metric:nth-child(4),
+      .content-metrics .metric:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .section-note { grid-template-columns: 1fr; gap: 5px; }
+      .image-gallery { grid-template-columns: 1fr; }
+      .ai-matrix-controls { align-items: flex-start; flex-direction: column; }
+      .history-reports-header { align-items: flex-start; flex-direction: column; }
+      .history-reports-title { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .history-report-row { grid-template-columns: 1fr 12px 1fr; }
+      th, td { min-width: 160px; }
+      td.platform-cell { min-width: 110px; }
+      .report-header h1 { font-size: 32px; }
+    }
+
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; font-size: 10pt; }
+      .app-toolbar,
+      .upload-zone,
+      .remove-image,
+      .compact-action,
+      .website-update-actions,
+      .row-actions,
+      .ai-matrix-controls,
+      .ai-highlight-palette,
+      .history-report-remove,
+      #addHistoryReport,
+      .image-lightbox,
+      .status-message { display: none !important; }
+      .report-shell { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+      .report-section { break-inside: avoid; padding: 20px 0; }
+      .table-wrap { overflow: visible; }
+      input,
+      select,
+      .editable-block,
+      .editable-cell,
+      .question-text { box-shadow: none !important; }
+      input[type="date"],
+      input[type="text"],
+      input[type="number"],
+      input[type="url"],
+      select { border-color: transparent; padding-inline: 0; }
+      .image-gallery { grid-template-columns: repeat(2, 1fr); }
+      .image-card img { height: auto; max-height: 240px; }
+      .report-footer { margin-top: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-toolbar" data-app-ui>
+    <div class="toolbar-title">
+      <span class="brand">TurboFlow</span>
+      <span class="name">GEO 周报编辑器</span>
+      <span class="autosave-status" id="autosaveStatus">自动保存已开启</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="button" type="button" id="saveLocal">立即保存</button>
+      <button class="button primary" type="button" id="downloadHtml">下载当前 HTML</button>
+      <button class="button" type="button" id="printReport">打印 / 导出 PDF</button>
+      <button class="button danger" type="button" id="clearReport">清空数据</button>
+    </div>
+  </header>
+
+  <main class="report-shell" id="report">
+    <header class="report-header">
+      <div>
+        <h1><span>TurboFlow</span> GEO 周报</h1>
+        <p class="report-subtitle">AI 平台表现、搜索数据与内容分发周度复盘</p>
+      </div>
+      <div>
+        <div class="field-label">报告周期</div>
+        <div class="period-fields">
+          <input type="date" id="weekStart" value="2026-07-20" aria-label="报告开始日期">
+          <span>至</span>
+          <input type="date" id="weekEnd" value="2026-07-26" aria-label="报告结束日期">
+        </div>
+      </div>
+    </header>
+
+    <section class="report-section" aria-labelledby="summaryTitle">
+      <div class="section-heading">
+        <h2 id="summaryTitle">1. 摘要</h2>
+      </div>
+      <div class="summary-grid">
+        <article class="summary-item">
+          <div class="summary-label">主要进展</div>
+          <div class="editable-block" contenteditable="true" data-persist="summary-progress" data-placeholder="例如：新增 8 条媒体回链，事件合约平台对比覆盖提升……">1. 7篇主要文章
+2. ＞20条主要分发媒体 渠道和权重测试</div>
+        </article>
+        <article class="summary-item">
+          <div class="summary-label">网站 GEO 更新</div>
+          <div class="website-update-list" id="websiteUpdateList"></div>
+          <div class="website-update-actions" data-app-ui>
+            <button class="button" type="button" id="addWebsiteUpdate">增加目录项</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section" aria-labelledby="aiTitle">
+      <div class="section-heading">
+        <h2 id="aiTitle">2. LLM 平台对比</h2>
+      </div>
+      <div class="section-note ai-conclusion-note">
+        <div class="field-label">本周结论</div>
+        <div class="editable-block" contenteditable="true" data-persist="llm-comparison-conclusion" data-placeholder="例如：本周共测试 6 个问题；海外与国内 LLM 对 TurboFlow 的识别、事件合约推荐及信息准确性存在……">1. 无法联网的LLM 信息受限于记忆，效果一般偏差<div>2. 支持联网的海外LLM 基本能够正确识别，但还有优化空间；不同模型之间也效果不同 thinking越高 一般交叉验证后结果越准确</div><div>3. 已有初步投放内容出现在LLM的搜索结果中
+4. Claude 特殊，随着模型越好，反而命中内容概率越低</div></div>
+      </div>
+      <div class="ai-matrix-controls" data-app-ui>
+        <div class="ai-matrix-help">截图点击可看原图，可切换全览或大图</div>
+        <div class="matrix-view-toggle" role="group" aria-label="表格显示方式">
+          <button class="matrix-view-button active" type="button" data-matrix-view="overview" aria-pressed="true">全览</button>
+          <button class="matrix-view-button" type="button" data-matrix-view="reading" aria-pressed="false">大图</button>
+        </div>
+      </div>
+      <div class="ai-matrix-wrap" data-view="overview">
+        <table class="ai-matrix-table">
+          <colgroup>
+            <col class="question-column">
+            <col class="platform-column"><col class="platform-column"><col class="platform-column"><col class="platform-column">
+            <col class="platform-column"><col class="platform-column">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>测试问题</th>
+              <th>Gemini<span class="platform-region">海外</span></th>
+              <th>ChatGPT<span class="platform-region">海外</span></th>
+              <th>Claude<span class="platform-region">海外</span></th>
+              <th>Perplexity<span class="platform-region">海外</span></th>
+              <th>豆包<span class="platform-region">国内</span></th>
+              <th>DeepSeek<span class="platform-region">国内</span></th>
+            </tr>
+          </thead>
+          <tbody id="aiQuestionMatrix"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report-section" aria-labelledby="seoTitle">
+      <div class="section-heading">
+        <h2 id="seoTitle">3. SEO / Google Search Console</h2>
+      </div>
+      <div class="section-note">
+        <div class="field-label">GSC 结论</div>
+        <div class="editable-block" contenteditable="true" data-persist="gsc-note" data-placeholder="例如：本周品牌词开始获得曝光，但点击量仍较低；下一步重点优化 TurboFlow 品牌词及事件合约相关关键词……"><blockquote><p>本周 Google 搜索获得 108 次展示、1 次点击，CTR 为 0.9%。品牌相关搜索词已开始获得曝光，但点击量仍较低。
+下一步重点优化TurboFlow 品牌词及事件合约相关关键词。</p></blockquote><p></p></div>
+      </div>
+      <div class="upload-panel" data-upload-panel="gsc" tabindex="0">
+        <div class="upload-label">Google Search Console 截图</div>
+        <div class="upload-zone">
+          <input type="file" accept="image/png,image/jpeg,image/webp" multiple>
+          <span><strong>点击本栏目后，按 Ctrl+V 粘贴截图</strong><small>选中状态会持续，可连续粘贴多张</small><button class="button upload-file-button" type="button">选择本地图片</button></span>
+        </div>
+        <div class="image-gallery" data-gallery="gsc"></div>
+      </div>
+    </section>
+
+    <section class="report-section" aria-labelledby="contentTitle">
+      <div class="section-heading">
+        <h2 id="contentTitle">4. 内容生产与分发</h2>
+      </div>
+      <div class="metrics-grid content-metrics">
+        <div class="metric"><div class="metric-label" contenteditable="true" data-persist="article-count-label">主要文章</div><input type="text" inputmode="numeric" data-persist="article-count" value="7" placeholder="—"></div>
+        <div class="metric"><div class="metric-label" contenteditable="true" data-persist="distribution-count-label">回链</div><input type="text" inputmode="numeric" data-backlink-total value="14" readonly aria-readonly="true"></div>
+      </div>
+      <div class="backlink-block">
+        <div class="backlink-heading">
+          <h3>发布回链明细（14 条）</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="backlink-table">
+            <thead>
+              <tr><th>分类</th><th>发布平台</th><th>文章 / 发布内容</th><th>回链</th><th class="backlink-actions-column">操作</th></tr>
+            </thead>
+            <tbody>
+              <tr class="featured-row"><td class="category-column">短周期平台对比</td><td class="platform-column">PANews</td><td><a class="backlink-title" href="https://www.panewslab.com/zh/articles/019f8a30-5622-70ea-8a60-223e5f11fa35" target="_blank" rel="noopener">3 大短周期事件合约平台对比：Polymarket、TurboFlow 与 Robinhood</a></td><td><a class="backlink-open" href="https://www.panewslab.com/zh/articles/019f8a30-5622-70ea-8a60-223e5f11fa35" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">短周期平台对比</td><td class="platform-column">Foresight News</td><td><a class="backlink-title" href="https://foresightnews.pro/article/detail/98995" target="_blank" rel="noopener">3 大短周期事件合约平台对比：Polymarket、TurboFlow 与 Robinhood</a></td><td><a class="backlink-open" href="https://foresightnews.pro/article/detail/98995" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">短周期平台对比</td><td class="platform-column">CoinMarketCap</td><td><a class="backlink-title" href="https://coinmarketcap.com/community/post/378024219/" target="_blank" rel="noopener">3 大短周期事件合约平台对比：Polymarket、TurboFlow 与 Robinhood</a></td><td><a class="backlink-open" href="https://coinmarketcap.com/community/post/378024219/" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">Followin</td><td><a class="backlink-title" href="https://followin.io/zh-Hans/feed/26540255" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://followin.io/zh-Hans/feed/26540255" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">短周期平台对比</td><td class="platform-column">Open Market Notes</td><td><a class="backlink-title" href="https://openmarketnotes.com/articles/short-cycle-event-contract-platform-comparison/?lang=zh-Hant" target="_blank" rel="noopener">比較三個短週期事件合約平台：TurboFlow、Polymarket 與 Robinhood</a></td><td><a class="backlink-open" href="https://openmarketnotes.com/articles/short-cycle-event-contract-platform-comparison/?lang=zh-Hant" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">Medium</td><td><a class="backlink-title" href="https://medium.com/@bluueweb3/046763cce90a" target="_blank" rel="noopener">从哈耶克到 Polymarket 再到 TurboFlow：一个世纪的预测市场和事件合约</a></td><td><a class="backlink-open" href="https://medium.com/@bluueweb3/046763cce90a" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr class="featured-row"><td class="category-column">事件合约演化</td><td class="platform-column">Foresight News</td><td><a class="backlink-title" href="https://foresightnews.pro/article/detail/99034" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://foresightnews.pro/article/detail/99034" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">ME News</td><td><a class="backlink-title" href="https://www.me.news/contents/298650" target="_blank" rel="noopener">从哈耶克到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://www.me.news/contents/298650" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">Binance Square</td><td><a class="backlink-title" href="https://www.binance.com/zh-CN/square/post/348241626020657" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://www.binance.com/zh-CN/square/post/348241626020657" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">搜狐新闻</td><td><a class="backlink-title" href="https://www.sohu.com/a/1053800071_122504951" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://www.sohu.com/a/1053800071_122504951" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">知乎专栏</td><td><a class="backlink-title" href="https://zhuanlan.zhihu.com/p/2063602272454567493" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://zhuanlan.zhihu.com/p/2063602272454567493" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">东方财富 / 财富号</td><td><a class="backlink-title" href="https://caifuhao.eastmoney.com/news/20260723120421826714190" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://caifuhao.eastmoney.com/news/20260723120421826714190" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">事件合约演化</td><td class="platform-column">搜狐新闻 / 微观商经</td><td><a class="backlink-title" href="https://3g.k.sohu.com/h5apps/t/feed?snstype=1&amp;action=903&amp;uid=1714740160-7435222254164109931-U" target="_blank" rel="noopener">从哈耶克到 Polymarket 到 TurboFlow：从预测市场到事件合约的百年演化史</a></td><td><a class="backlink-open" href="https://3g.k.sohu.com/h5apps/t/feed?snstype=1&amp;action=903&amp;uid=1714740160-7435222254164109931-U" target="_blank" rel="noopener">打开链接</a></td></tr>
+              <tr><td class="category-column">品牌介绍</td><td class="platform-column">MarketersMEDIA</td><td><a class="backlink-title" href="https://news.marketersmedia.com/what-is-turboflow-event-contracts-perpetuals-and-on-chain-trading/89197966" target="_blank" rel="noopener">What Is TurboFlow? Event Contracts, Perpetuals, and On-Chain Trading</a></td><td><a class="backlink-open" href="https://news.marketersmedia.com/what-is-turboflow-event-contracts-perpetuals-and-on-chain-trading/89197966" target="_blank" rel="noopener">打开链接</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row-actions" data-app-ui>
+          <button class="button" type="button" id="addBacklinkRow">增加一条回链</button>
+        </div>
+      </div>
+      <div class="upload-panel" data-upload-panel="distribution" tabindex="0">
+        <div class="upload-label">发布 / 分发截图</div>
+        <div class="upload-zone">
+          <input type="file" accept="image/png,image/jpeg,image/webp" multiple>
+          <span><strong>点击本栏目后，按 Ctrl+V 粘贴截图</strong><small>可连续添加媒体发布页、回链或收录截图</small><button class="button upload-file-button" type="button">选择本地图片</button></span>
+        </div>
+        <div class="image-gallery" data-gallery="distribution"></div>
+      </div>
+    </section>
+
+    <section class="report-section" aria-labelledby="actionTitle">
+      <div class="section-heading">
+        <h2 id="actionTitle">5. 本周问题与下周计划</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="actions-table">
+          <colgroup>
+            <col style="width: 110px">
+            <col>
+          </colgroup>
+          <thead><tr><th>类型</th><th>内容</th></tr></thead>
+          <tbody id="actionRows">
+            <tr data-action-row><td><select data-persist="action-type-1"><option>本周问题</option><option selected>下周计划</option></select></td><td><input type="text" data-persist="action-content-1" value="News 页面" placeholder="填写问题或行动"></td></tr>
+            <tr data-action-row><td><select data-persist="action-type-2"><option selected>下周计划</option><option>本周问题</option></select></td><td><input type="text" data-persist="action-content-2" value="优化品牌词 和相关QA" placeholder="填写问题或行动"></td></tr>
+            <tr data-action-row><td><select data-persist="action-type-3"><option selected>下周计划</option><option>本周问题</option></select></td><td><input type="text" data-persist="action-content-3" value="事件合约相关关键词，其他媒体发文界限测试" placeholder="填写问题或行动"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row-actions" data-app-ui>
+        <button class="button" type="button" id="addActionRow">增加一行</button>
+      </div>
+      <div class="upload-panel" data-upload-panel="actions" tabindex="0">
+        <div class="upload-label">本周问题 / 下周计划截图</div>
+        <div class="history-reports">
+          <div class="history-reports-header">
+            <div class="history-reports-title">
+              <h3>历史报告</h3>
+              <span class="history-reports-caption">时间周期与报告链接</span>
+            </div>
+            <button class="button" type="button" id="addHistoryReport" data-app-ui>增加报告</button>
+          </div>
+          <div class="history-report-list" id="historyReportList"></div>
+        </div>
+        <div class="upload-zone">
+          <input type="file" accept="image/png,image/jpeg,image/webp" multiple>
+          <span><strong>点击本栏目后，按 Ctrl+V 粘贴截图</strong><small>可连续添加相关问题、数据或下周计划截图</small><button class="button upload-file-button" type="button">选择本地图片</button></span>
+        </div>
+        <div class="image-gallery" data-gallery="actions"></div>
+      </div>
+    </section>
+
+    <footer class="report-footer">TurboFlow GEO 周报公开浏览版 · 报告周期 2026/07/20–2026/07/26</footer>
+  </main>
+
+  <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
+
+  <div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="截图放大预览" aria-hidden="true" data-app-ui>
+    <div class="image-lightbox-dialog">
+      <img id="imageLightboxPreview" alt="放大截图">
+      <button class="image-lightbox-close" id="imageLightboxClose" type="button" aria-label="关闭放大预览">×</button>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const REPORT_ID = document.documentElement.dataset.reportId || 'turboflow-geo-weekly-template';
+      const STORAGE_KEY = `turboflow-geo-weekly-report-v2:${REPORT_ID}`;
+      const BACKLINKS_REVISION = '2026-07-26-links-v2';
+      const IMAGE_SEED_KEY = `${STORAGE_KEY}:seeded-images`;
+      const IMAGE_DB_NAME = 'turboflow-geo-weekly-images-v1';
+      const IMAGE_STORE = 'screenshots';
+      const report = document.getElementById('report');
+      const statusMessage = document.getElementById('statusMessage');
+      const autosaveStatus = document.getElementById('autosaveStatus');
+      const imageLightbox = document.getElementById('imageLightbox');
+      const imageLightboxPreview = document.getElementById('imageLightboxPreview');
+      const imageLightboxClose = document.getElementById('imageLightboxClose');
+      let statusTimer;
+      let autoSaveTimer;
+      let activeUploadKey = null;
+
+      const notify = (message) => {
+        statusMessage.textContent = message;
+        statusMessage.classList.add('show');
+        clearTimeout(statusTimer);
+        statusTimer = setTimeout(() => statusMessage.classList.remove('show'), 2800);
+      };
+
+      const openImageLightbox = (image) => {
+        imageLightboxPreview.src = image.src;
+        imageLightboxPreview.alt = image.alt || '放大截图';
+        imageLightbox.classList.add('open');
+        imageLightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+        imageLightboxClose.focus();
+      };
+
+      const closeImageLightbox = () => {
+        imageLightbox.classList.remove('open');
+        imageLightbox.setAttribute('aria-hidden', 'true');
+        imageLightboxPreview.removeAttribute('src');
+        document.body.classList.remove('lightbox-open');
+      };
+
+      const toDateInput = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
+      };
+
+      const setDefaultWeek = () => {
+        const start = document.getElementById('weekStart');
+        const end = document.getElementById('weekEnd');
+        if (start.value || end.value) return;
+        const today = new Date();
+        const mondayOffset = (today.getDay() + 6) % 7;
+        const monday = new Date(today);
+        monday.setDate(today.getDate() - mondayOffset);
+        const sunday = new Date(monday);
+        sunday.setDate(monday.getDate() + 6);
+        start.value = toDateInput(monday);
+        end.value = toDateInput(sunday);
+      };
+
+      const createWebsiteUpdateRow = (value = '') => {
+        const row = document.createElement('div');
+        row.className = 'website-update-row';
+        row.innerHTML = `
+          <span class="website-update-index"></span>
+          <input type="text" class="website-update-input" placeholder="例如：上线事件合约 FAQ 页面">
+          <button class="compact-action" type="button" aria-label="删除目录项">×</button>`;
+        row.querySelector('input').value = value;
+        row.querySelector('button').addEventListener('click', () => {
+          row.remove();
+          if (!document.querySelector('.website-update-row')) createWebsiteUpdateRow('');
+          refreshWebsiteUpdateIndexes();
+          scheduleAutoSave();
+        });
+        document.getElementById('websiteUpdateList').appendChild(row);
+        refreshWebsiteUpdateIndexes();
+      };
+
+      const refreshWebsiteUpdateIndexes = () => {
+        document.querySelectorAll('.website-update-row').forEach((row, index) => {
+          row.querySelector('.website-update-index').textContent = `${index + 1}.`;
+        });
+      };
+
+      const DEFAULT_WEBSITE_UPDATES = ['Sitemap，robot，llms 部分上线', 'News 需求确认'];
+
+      const renderWebsiteUpdates = (values = DEFAULT_WEBSITE_UPDATES) => {
+        const list = document.getElementById('websiteUpdateList');
+        list.replaceChildren();
+        const safeValues = values.length ? values : [''];
+        safeValues.forEach(createWebsiteUpdateRow);
+      };
+
+      const aiPlatforms = [
+        { key: 'gemini', name: 'Gemini' },
+        { key: 'chatgpt', name: 'ChatGPT' },
+        { key: 'claude', name: 'Claude' },
+        { key: 'perplexity', name: 'Perplexity' },
+        { key: 'doubao', name: '豆包' },
+        { key: 'deepseek', name: 'DeepSeek' }
+      ];
+
+      const weeklyQuestions = [
+        { id: 1, category: '品牌介绍', text: 'TurboFlow 是什么？' },
+        { id: 2, category: '品牌介绍', text: 'TurboFlow 介绍' },
+        { id: 3, category: '品牌介绍', text: 'TurboFlow 靠谱吗？' },
+        { id: 4, category: '品牌介绍', text: 'TurboFlow 与其他预测市场或链上交易平台有什么区别？' },
+        { id: 5, category: '事件合约', text: '事件合约是什么？' },
+        { id: 8, category: '事件合约', text: '有哪些事件合约交易平台？' }
+      ];
+
+      const DEFAULT_SCREENSHOTS = {
+        'ai-q1-gemini': 'assets/screenshot-09930764103841b8.png',
+        'ai-q1-chatgpt': 'assets/screenshot-5ea2e9d39a8401d5.png',
+        'ai-q1-claude': 'assets/screenshot-45773aee213d37a4.png',
+        'ai-q1-perplexity': 'assets/screenshot-14c46e34ff4497e3.png',
+        'ai-q1-doubao': 'assets/screenshot-89844759e7a69030.png',
+        'ai-q1-deepseek': 'assets/screenshot-f196c3f39c60cfed.png',
+        'ai-q2-gemini': 'assets/screenshot-7b61033e1dcae58c.png',
+        'ai-q2-chatgpt': 'assets/screenshot-340c629b657fce0c.png',
+        'ai-q2-claude': 'assets/screenshot-d606ba8a0c3db9a8.png',
+        'ai-q2-perplexity': 'assets/screenshot-ebcb5b48a0fccace.png',
+        'ai-q2-doubao': 'assets/screenshot-b2e41d85edbf7a05.png',
+        'ai-q2-deepseek': 'assets/screenshot-1edece10e5cf9337.png',
+        'ai-q3-gemini': 'assets/screenshot-b12a3c37c15d96d4.png',
+        'ai-q3-chatgpt': 'assets/screenshot-8a018d0c68c05709.png',
+        'ai-q3-claude': 'assets/screenshot-63b0f7adeeff0aa4.png',
+        'ai-q3-perplexity': 'assets/screenshot-31f909e7f0b9caf4.png',
+        'ai-q3-doubao': 'assets/screenshot-7721caeef66d2d1f.png',
+        'ai-q3-deepseek': 'assets/screenshot-a77f580ce79748ea.png',
+        'ai-q4-gemini': 'assets/screenshot-d3e9a889ccc4ff2e.png',
+        'ai-q4-chatgpt': 'assets/screenshot-5bfdb56c653f80c2.png',
+        'ai-q4-claude': 'assets/screenshot-4190b47ae1e375f4.png',
+        'ai-q4-perplexity': 'assets/screenshot-abc94ed7c21cff78.png',
+        'ai-q4-doubao': 'assets/screenshot-52deab65bc62b83b.png',
+        'ai-q4-deepseek': 'assets/screenshot-0dccf8620c6d030a.png',
+        'ai-q5-gemini': 'assets/screenshot-2d120c9a321a3849.png',
+        'ai-q5-chatgpt': 'assets/screenshot-a769c28fd2e6706b.png',
+        'ai-q5-claude': 'assets/screenshot-0a0e45fb08f4df11.png',
+        'ai-q5-perplexity': 'assets/screenshot-bfc5fe1ac309820a.png',
+        'ai-q5-doubao': 'assets/screenshot-9dffd190973439fe.png',
+        'ai-q5-deepseek': 'assets/screenshot-9244c72ded11d09b.png',
+        'ai-q8-gemini': 'assets/screenshot-f8636652ec5df0ac.png',
+        'ai-q8-chatgpt': 'assets/screenshot-da0850935319a1fb.png',
+        'ai-q8-claude': 'assets/screenshot-fb3e994aabbc8d23.png',
+        'ai-q8-perplexity': 'assets/screenshot-6b359b85fd4fc50a.png',
+        'ai-q8-doubao': 'assets/screenshot-6d982fb77ea5a071.png',
+        'ai-q8-deepseek': 'assets/screenshot-bd968f07af767173.png',
+        gsc: [
+          'assets/screenshot-4f5052b34b0a4cd5.png',
+          'assets/screenshot-595cbcaf46464905.png',
+          'assets/screenshot-9907990497f82532.png'
+        ],
+        distribution: [
+          'assets/screenshot-55d67311cf7951cf.png',
+          'assets/screenshot-6ef7bf4f0d5df85c.png',
+          'assets/screenshot-cc7fbec3c52e3215.png',
+          'assets/screenshot-3069d72f6f17a736.png',
+          'assets/screenshot-01c59be0c258567f.png',
+          'assets/screenshot-ef9d1c7031e030c3.png'
+        ],
+        actions: 'assets/screenshot-a911f892c7b7a621.png'
+      };
+
+      const renderAiQuestionMatrix = () => {
+        const body = document.getElementById('aiQuestionMatrix');
+        if (!body || body.children.length) return;
+        weeklyQuestions.forEach((question, questionIndex) => {
+          const number = questionIndex + 1;
+          const persistId = question.id;
+          const row = document.createElement('tr');
+          const questionCell = document.createElement('td');
+          questionCell.className = 'ai-question-cell';
+          questionCell.dataset.highlightKey = `ai-q${persistId}-question`;
+          questionCell.innerHTML = `
+            <div class="ai-question-meta">
+              <span class="ai-question-number">Q${number}</span>
+              <span class="ai-question-category">${question.category}</span>
+            </div>
+            <span class="question-text" contenteditable="true" data-persist="q${persistId}">${question.text}</span>`;
+          row.appendChild(questionCell);
+
+          aiPlatforms.forEach((platform) => {
+            const galleryKey = `ai-q${persistId}-${platform.key}`;
+            const cell = document.createElement('td');
+            cell.className = 'ai-screenshot-cell';
+            cell.dataset.highlightKey = galleryKey;
+            cell.innerHTML = `
+              <div class="upload-panel matrix-upload-panel" data-upload-panel="${galleryKey}" tabindex="0" aria-label="Q${number} ${platform.name} 截图区域">
+                <div class="upload-zone matrix-upload-zone">
+                  <span><strong>点击选中 · Ctrl+V</strong><small>粘贴新图会替换当前截图</small></span>
+                </div>
+                <div class="image-gallery matrix-image-gallery" data-gallery="${galleryKey}"></div>
+                <div class="matrix-note" contenteditable="true" data-persist="${galleryKey}-note"></div>
+              </div>`;
+            row.appendChild(cell);
+          });
+          body.appendChild(row);
+        });
+      };
+
+      renderAiQuestionMatrix();
+
+      const AI_HIGHLIGHT_COLORS = {
+        yellow: '黄色',
+        red: '红色',
+        green: '绿色',
+        blue: '蓝色',
+        purple: '紫色'
+      };
+
+      const updateAiHighlightControls = (cell) => {
+        const activeColor = cell.dataset.highlight || '';
+        cell.querySelectorAll('.ai-highlight-swatch').forEach((button) => {
+          button.setAttribute('aria-pressed', String(button.dataset.highlightColor === activeColor));
+        });
+      };
+
+      const collectAiHighlights = () => Object.fromEntries(
+        [...document.querySelectorAll('[data-highlight-key][data-highlight]')].map((cell) => [
+          cell.dataset.highlightKey,
+          cell.dataset.highlight
+        ])
+      );
+
+      const applyAiHighlights = (highlights) => {
+        if (!highlights || typeof highlights !== 'object') return;
+        document.querySelectorAll('[data-highlight-key]').forEach((cell) => {
+          const color = highlights[cell.dataset.highlightKey];
+          if (Object.hasOwn(AI_HIGHLIGHT_COLORS, color)) cell.dataset.highlight = color;
+          else cell.removeAttribute('data-highlight');
+          updateAiHighlightControls(cell);
+        });
+      };
+
+      const initializeAiHighlightControls = () => {
+        document.querySelectorAll('[data-highlight-key]').forEach((cell) => {
+          cell.querySelector(':scope > .ai-highlight-palette')?.remove();
+          const palette = document.createElement('div');
+          palette.className = 'ai-highlight-palette';
+          palette.dataset.appUi = '';
+          palette.setAttribute('role', 'group');
+          palette.setAttribute('aria-label', '重点标记颜色');
+
+          Object.entries(AI_HIGHLIGHT_COLORS).forEach(([color, label]) => {
+            const button = document.createElement('button');
+            button.className = 'ai-highlight-swatch';
+            button.type = 'button';
+            button.dataset.highlightColor = color;
+            button.setAttribute('aria-label', `标记为${label}重点`);
+            button.title = `标记为${label}重点`;
+            button.addEventListener('click', (event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              cell.dataset.highlight = color;
+              updateAiHighlightControls(cell);
+              scheduleAutoSave();
+              notify(`已标记为${label}重点。`);
+            });
+            palette.appendChild(button);
+          });
+
+          const clearButton = document.createElement('button');
+          clearButton.className = 'ai-highlight-clear';
+          clearButton.type = 'button';
+          clearButton.setAttribute('aria-label', '清除重点标记');
+          clearButton.title = '清除重点标记';
+          clearButton.textContent = '×';
+          clearButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            cell.removeAttribute('data-highlight');
+            updateAiHighlightControls(cell);
+            scheduleAutoSave();
+            notify('已清除重点标记。');
+          });
+          palette.appendChild(clearButton);
+          cell.appendChild(palette);
+          updateAiHighlightControls(cell);
+        });
+      };
+
+      initializeAiHighlightControls();
+
+      const matrixWrap = document.querySelector('.ai-matrix-wrap');
+      const matrixViewButtons = [...document.querySelectorAll('[data-matrix-view]')];
+      const setMatrixView = (view) => {
+        const safeView = view === 'reading' ? 'reading' : 'overview';
+        matrixWrap.dataset.view = safeView;
+        matrixViewButtons.forEach((button) => {
+          const active = button.dataset.matrixView === safeView;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+      };
+
+      matrixViewButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          setMatrixView(button.dataset.matrixView);
+          scheduleAutoSave();
+        });
+      });
+      setMatrixView(matrixWrap.dataset.view);
+
+      const editableLabelGroups = [
+        ['report-title', '.report-header h1'],
+        ['report-subtitle', '.report-subtitle'],
+        ['field-label', '.field-label'],
+        ['section-title', '.section-heading h2'],
+        ['summary-label', '.summary-label'],
+        ['metric-label', '.metric-label'],
+        ['ai-table-header', '.ai-matrix-table thead th'],
+        ['question-category', '.ai-question-category'],
+        ['backlink-table-header', '.backlink-table thead th'],
+        ['action-table-header', '.actions-table thead th'],
+        ['history-title', '.history-reports h3'],
+        ['upload-label', '.upload-label']
+      ];
+
+      editableLabelGroups.forEach(([group, selector]) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          element.contentEditable = 'true';
+          element.spellcheck = false;
+          element.dataset.editableLabel = '';
+          element.dataset.defaultHtml = element.innerHTML;
+          if (!element.dataset.persist) element.dataset.persist = `label-${group}-${index + 1}`;
+        });
+      });
+
+      const backlinkTableBody = document.querySelector('.backlink-table tbody');
+      const readBacklinkRowsFromMarkup = () => [...(backlinkTableBody?.querySelectorAll('tr') || [])].map((row) => ({
+        category: row.querySelector('.category-column')?.textContent.trim() || '',
+        platform: row.querySelector('.platform-column')?.textContent.trim() || '',
+        title: row.querySelector('.backlink-title')?.textContent.trim() || '',
+        url: row.querySelector('.backlink-open')?.getAttribute('href') || row.querySelector('.backlink-title')?.getAttribute('href') || '',
+        featured: row.classList.contains('featured-row')
+      }));
+      const DEFAULT_BACKLINK_ROWS = readBacklinkRowsFromMarkup();
+
+      const syncBacklinkPreview = (row) => {
+        const url = row.querySelector('.backlink-url-input')?.value.trim() || '';
+        const preview = row.querySelector('.backlink-preview-link');
+        if (!preview) return;
+        preview.href = url || '#';
+        preview.setAttribute('aria-disabled', url ? 'false' : 'true');
+      };
+
+      const createBacklinkRow = (data = {}) => {
+        const row = document.createElement('tr');
+        row.dataset.backlinkRow = '';
+        row.classList.toggle('featured-row', Boolean(data.featured));
+        row.innerHTML = `
+          <td class="category-column"><input class="backlink-editable backlink-category-input" type="text" aria-label="回链分类"></td>
+          <td class="platform-column"><input class="backlink-editable backlink-platform-input" type="text" aria-label="发布平台"></td>
+          <td><input class="backlink-editable backlink-title-input" type="text" aria-label="文章或发布内容"></td>
+          <td>
+            <div class="backlink-url-editor">
+              <input class="backlink-editable backlink-url-input" type="url" aria-label="回链地址" placeholder="https://">
+              <a class="backlink-preview-link" href="#" target="_blank" rel="noopener" aria-disabled="true">打开</a>
+            </div>
+          </td>
+          <td class="backlink-actions-column"><button class="backlink-remove" type="button" aria-label="删除这条回链">×</button></td>`;
+        row.querySelector('.backlink-category-input').value = data.category || '';
+        row.querySelector('.backlink-platform-input').value = data.platform || '';
+        row.querySelector('.backlink-title-input').value = data.title || '';
+        row.querySelector('.backlink-url-input').value = data.url || '';
+        row.querySelector('.backlink-url-input').addEventListener('input', () => syncBacklinkPreview(row));
+        row.querySelector('.backlink-remove').addEventListener('click', () => {
+          row.remove();
+          if (!backlinkTableBody.querySelector('[data-backlink-row]')) createBacklinkRow();
+          scheduleAutoSave();
+        });
+        backlinkTableBody.appendChild(row);
+        syncBacklinkPreview(row);
+        return row;
+      };
+
+      const renderBacklinkRows = (rows = []) => {
+        backlinkTableBody.replaceChildren();
+        const safeRows = rows.length ? rows : [{}];
+        safeRows.forEach(createBacklinkRow);
+      };
+
+      const collectBacklinkRows = () => [...backlinkTableBody.querySelectorAll('[data-backlink-row]')].map((row) => ({
+        category: row.querySelector('.backlink-category-input')?.value || '',
+        platform: row.querySelector('.backlink-platform-input')?.value || '',
+        title: row.querySelector('.backlink-title-input')?.value || '',
+        url: row.querySelector('.backlink-url-input')?.value || '',
+        featured: row.classList.contains('featured-row')
+      }));
+
+      renderBacklinkRows(DEFAULT_BACKLINK_ROWS);
+
+      const historyReportList = document.getElementById('historyReportList');
+      const DEFAULT_HISTORY_REPORTS = [{
+        start: '2026-07-13',
+        end: '2026-07-19',
+        url: 'https://turboflow-geo-weekly-report.pages.dev/'
+      }];
+
+      const syncHistoryReportLink = (row) => {
+        const url = row.querySelector('.history-report-url')?.value.trim() || '';
+        const link = row.querySelector('.history-report-open');
+        if (!link) return;
+        link.href = url || '#';
+        link.setAttribute('aria-disabled', String(!url));
+      };
+
+      const createHistoryReportRow = (data = {}) => {
+        const row = document.createElement('div');
+        row.className = 'history-report-row';
+        row.dataset.historyReportRow = '';
+        row.innerHTML = `
+          <input class="history-report-input history-report-start" type="date" aria-label="历史报告开始日期">
+          <span class="history-period-separator">至</span>
+          <input class="history-report-input history-report-end" type="date" aria-label="历史报告结束日期">
+          <input class="history-report-input history-report-url" type="url" aria-label="历史报告链接" placeholder="https://">
+          <a class="history-report-open" href="#" target="_blank" rel="noopener" aria-disabled="true">打开报告</a>
+          <button class="history-report-remove" type="button" aria-label="删除这条历史报告">×</button>`;
+        row.querySelector('.history-report-start').value = data.start || '';
+        row.querySelector('.history-report-end').value = data.end || '';
+        row.querySelector('.history-report-url').value = data.url || '';
+        row.querySelector('.history-report-url').addEventListener('input', () => syncHistoryReportLink(row));
+        row.querySelector('.history-report-remove').addEventListener('click', (event) => {
+          event.stopPropagation();
+          row.remove();
+          if (!historyReportList.querySelector('[data-history-report-row]')) createHistoryReportRow();
+          scheduleAutoSave();
+        });
+        historyReportList.appendChild(row);
+        syncHistoryReportLink(row);
+        return row;
+      };
+
+      const collectHistoryReports = () => [...historyReportList.querySelectorAll('[data-history-report-row]')].map((row) => ({
+        start: row.querySelector('.history-report-start')?.value || '',
+        end: row.querySelector('.history-report-end')?.value || '',
+        url: row.querySelector('.history-report-url')?.value || ''
+      }));
+
+      const renderHistoryReports = (reports = []) => {
+        historyReportList.replaceChildren();
+        const safeReports = reports.length ? reports : [{}];
+        safeReports.forEach(createHistoryReportRow);
+      };
+
+      const embeddedHistoryReports = collectHistoryReports();
+      renderHistoryReports(embeddedHistoryReports.length ? embeddedHistoryReports : DEFAULT_HISTORY_REPORTS);
+      document.querySelector('.history-reports')?.addEventListener('pointerdown', (event) => event.stopPropagation());
+      document.querySelector('.history-reports')?.addEventListener('focusin', (event) => event.stopPropagation());
+
+      const collectTextState = () => {
+        const state = {};
+        document.querySelectorAll('[data-persist]').forEach((element) => {
+          const key = element.dataset.persist;
+          if (element.matches('input, textarea, select')) state[key] = element.value;
+          else state[key] = element.innerHTML;
+        });
+        state.weekStart = document.getElementById('weekStart').value;
+        state.weekEnd = document.getElementById('weekEnd').value;
+        state.websiteUpdates = [...document.querySelectorAll('.website-update-input')].map((input) => input.value);
+        state.backlinksRevision = BACKLINKS_REVISION;
+        state.backlinkRows = collectBacklinkRows();
+        state.aiHighlights = collectAiHighlights();
+        state.matrixView = matrixWrap.dataset.view;
+        state.historyReports = collectHistoryReports();
+        state.actionRows = [...document.querySelectorAll('[data-action-row]')].map((row) => ({
+          type: row.querySelector('select:nth-of-type(1)')?.value || row.querySelector('select')?.value || '下周计划',
+          content: row.querySelector('td:nth-child(2) input')?.value || ''
+        }));
+        return state;
+      };
+
+      const applyTextState = (state) => {
+        if (!state) return;
+        if (Array.isArray(state.websiteUpdates)) renderWebsiteUpdates(state.websiteUpdates);
+        if (state.backlinksRevision === BACKLINKS_REVISION && Array.isArray(state.backlinkRows)) {
+          renderBacklinkRows(state.backlinkRows);
+        }
+        if (Array.isArray(state.historyReports)) renderHistoryReports(state.historyReports);
+        if (Array.isArray(state.actionRows) && state.actionRows.length) renderActionRows(state.actionRows);
+        document.querySelectorAll('[data-persist]').forEach((element) => {
+          const key = element.dataset.persist;
+          if (!(key in state)) return;
+          if (element.matches('input, textarea, select')) element.value = state[key];
+          else element.innerHTML = state[key];
+        });
+        if (state.weekStart) document.getElementById('weekStart').value = state.weekStart;
+        if (state.weekEnd) document.getElementById('weekEnd').value = state.weekEnd;
+        applyAiHighlights(state.aiHighlights);
+        setMatrixView(state.matrixView);
+      };
+
+      const updateAutosaveStatus = (text) => {
+        autosaveStatus.textContent = text;
+      };
+
+      const saveLocal = (silent = false) => {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(collectTextState()));
+          const time = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+          updateAutosaveStatus(`已自动保存 ${time}`);
+          if (!silent) notify('文字和目录已保存；截图也会自动保存在当前浏览器。');
+        } catch (error) {
+          updateAutosaveStatus('自动保存不可用');
+          notify('浏览器无法保存本地数据，请改用“下载当前 HTML”。');
+        }
+      };
+
+      const scheduleAutoSave = () => {
+        updateAutosaveStatus('正在保存…');
+        clearTimeout(autoSaveTimer);
+        autoSaveTimer = setTimeout(() => saveLocal(true), 500);
+      };
+
+      const loadLocal = () => {
+        try {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) applyTextState(JSON.parse(saved));
+        } catch (error) {
+          console.warn('Local report state could not be restored.', error);
+        }
+      };
+
+      const openImageDb = () => new Promise((resolve, reject) => {
+        if (!('indexedDB' in window)) return reject(new Error('IndexedDB unavailable'));
+        const request = indexedDB.open(IMAGE_DB_NAME, 1);
+        request.onupgradeneeded = () => {
+          const db = request.result;
+          if (!db.objectStoreNames.contains(IMAGE_STORE)) db.createObjectStore(IMAGE_STORE);
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+
+      const imageStorageKey = (galleryKey) => `${REPORT_ID}:${galleryKey}`;
+
+      const writeStoredImages = async (galleryKey, images) => {
+        try {
+          const db = await openImageDb();
+          await new Promise((resolve, reject) => {
+            const transaction = db.transaction(IMAGE_STORE, 'readwrite');
+            transaction.objectStore(IMAGE_STORE).put(images, imageStorageKey(galleryKey));
+            transaction.oncomplete = resolve;
+            transaction.onerror = () => reject(transaction.error);
+          });
+          db.close();
+        } catch (error) {
+          console.warn('Screenshots could not be saved locally.', error);
+          updateAutosaveStatus('文字已保存，截图请下载 HTML 备份');
+        }
+      };
+
+      const readStoredImages = async (galleryKey) => {
+        try {
+          const db = await openImageDb();
+          const result = await new Promise((resolve, reject) => {
+            const transaction = db.transaction(IMAGE_STORE, 'readonly');
+            const request = transaction.objectStore(IMAGE_STORE).get(imageStorageKey(galleryKey));
+            request.onsuccess = () => resolve(request.result || []);
+            request.onerror = () => reject(request.error);
+          });
+          db.close();
+          return result;
+        } catch (error) {
+          return [];
+        }
+      };
+
+      const deleteStoredImages = async () => {
+        try {
+          const db = await openImageDb();
+          await new Promise((resolve, reject) => {
+            const transaction = db.transaction(IMAGE_STORE, 'readwrite');
+            const store = transaction.objectStore(IMAGE_STORE);
+            const prefix = `${REPORT_ID}:`;
+            const request = store.openCursor();
+            request.onsuccess = () => {
+              const cursor = request.result;
+              if (!cursor) return;
+              if (String(cursor.key).startsWith(prefix)) cursor.delete();
+              cursor.continue();
+            };
+            request.onerror = () => reject(request.error);
+            transaction.oncomplete = resolve;
+            transaction.onerror = () => reject(transaction.error);
+          });
+          db.close();
+        } catch (error) {
+          console.warn('Stored screenshots could not be cleared.', error);
+        }
+      };
+
+      const persistGallery = (gallery) => {
+        const galleryKey = gallery.dataset.gallery;
+        const images = [...gallery.querySelectorAll('.image-card')].map((card) => ({
+          src: card.querySelector('img').src,
+          name: card.querySelector('figcaption')?.textContent || '已上传截图'
+        }));
+        writeStoredImages(galleryKey, images);
+      };
+
+      const syncUploadPanelState = (gallery) => {
+        const panel = gallery.closest('[data-upload-panel]');
+        if (!panel) return;
+        panel.classList.toggle('has-image', gallery.querySelector('.image-card') !== null);
+      };
+
+      const addImage = (gallery, dataUrl, name, persist = true) => {
+        const singleImage = gallery.classList.contains('matrix-image-gallery');
+        if (singleImage) gallery.replaceChildren();
+        const figure = document.createElement('figure');
+        figure.className = 'image-card';
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.alt = name || '周报截图';
+        const caption = document.createElement('figcaption');
+        caption.textContent = name || '已上传截图';
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'remove-image';
+        remove.setAttribute('aria-label', '删除截图');
+        remove.textContent = '×';
+        remove.addEventListener('click', () => {
+          figure.remove();
+          syncUploadPanelState(gallery);
+          persistGallery(gallery);
+        });
+        figure.append(img, caption, remove);
+        gallery.appendChild(figure);
+        syncUploadPanelState(gallery);
+        if (persist) persistGallery(gallery);
+      };
+
+      const seedDefaultScreenshots = () => {
+        try {
+          if (localStorage.getItem(IMAGE_SEED_KEY) || localStorage.getItem(STORAGE_KEY)) return;
+        } catch (error) {
+          console.warn('Screenshot seed state could not be checked.', error);
+        }
+        Object.entries(DEFAULT_SCREENSHOTS).forEach(([galleryKey, sources]) => {
+          const gallery = document.querySelector(`[data-gallery="${galleryKey}"]`);
+          if (!gallery || gallery.children.length) return;
+          const safeSources = Array.isArray(sources) ? sources : [sources];
+          safeSources.forEach((src, index) => addImage(gallery, src, `上周截图 ${index + 1}`, false));
+          persistGallery(gallery);
+        });
+        try {
+          localStorage.setItem(IMAGE_SEED_KEY, '1');
+        } catch (error) {
+          console.warn('Screenshot seed state could not be saved.', error);
+        }
+      };
+
+      seedDefaultScreenshots();
+
+      const readImages = (files, gallery) => {
+        const imageFiles = [...files].filter((file) => file.type.startsWith('image/'));
+        const selectedFiles = gallery.classList.contains('matrix-image-gallery') ? imageFiles.slice(0, 1) : imageFiles;
+        selectedFiles.forEach((file) => {
+          if (file.size > 8 * 1024 * 1024) {
+            notify(`${file.name} 超过 8MB，建议压缩后再上传。`);
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = () => addImage(gallery, reader.result, file.name || `粘贴截图-${Date.now()}.png`);
+          reader.readAsDataURL(file);
+        });
+      };
+
+      document.querySelectorAll('[data-upload-panel]').forEach((panel) => {
+        const panelKey = panel.dataset.uploadPanel;
+        const input = panel.querySelector('input[type="file"]');
+        const fileButton = panel.querySelector('.upload-file-button');
+        const zone = panel.querySelector('.upload-zone');
+        const gallery = panel.querySelector('.image-gallery');
+        const activatePanel = () => {
+          activeUploadKey = panelKey;
+          document.querySelectorAll('.upload-panel').forEach((item) => item.classList.remove('active'));
+          document.querySelectorAll('.upload-zone').forEach((item) => item.classList.remove('active'));
+          panel.classList.add('active');
+          zone.classList.add('active');
+        };
+        panel.addEventListener('pointerdown', activatePanel);
+        panel.addEventListener('focusin', activatePanel);
+        if (fileButton && input) {
+          fileButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            activatePanel();
+            input.click();
+          });
+          input.addEventListener('change', () => {
+            activatePanel();
+            readImages(input.files, gallery);
+            input.value = '';
+          });
+        }
+        ['dragenter', 'dragover'].forEach((eventName) => zone.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          zone.classList.add('dragover');
+        }));
+        ['dragleave', 'drop'].forEach((eventName) => zone.addEventListener(eventName, (event) => {
+          event.preventDefault();
+          zone.classList.remove('dragover');
+        }));
+        zone.addEventListener('drop', (event) => {
+          activatePanel();
+          readImages(event.dataTransfer.files, gallery);
+        });
+        if (gallery.children.length) {
+          if (gallery.classList.contains('matrix-image-gallery') && gallery.children.length > 1) {
+            [...gallery.children].slice(0, -1).forEach((item) => item.remove());
+          }
+          [...gallery.querySelectorAll('.remove-image')].forEach((button) => {
+            button.addEventListener('click', () => {
+              button.closest('.image-card')?.remove();
+              syncUploadPanelState(gallery);
+              persistGallery(gallery);
+            });
+          });
+          syncUploadPanelState(gallery);
+        } else {
+          readStoredImages(panelKey).then((images) => {
+            const restored = gallery.classList.contains('matrix-image-gallery') ? images.slice(-1) : images;
+            restored.forEach((image) => addImage(gallery, image.src, image.name, false));
+            syncUploadPanelState(gallery);
+          });
+        }
+      });
+
+      const nearestUploadPanel = () => {
+        const viewportCenter = window.scrollY + window.innerHeight / 2;
+        return [...document.querySelectorAll('[data-upload-panel]')].sort((a, b) => {
+          const aCenter = a.offsetTop + a.offsetHeight / 2;
+          const bCenter = b.offsetTop + b.offsetHeight / 2;
+          return Math.abs(aCenter - viewportCenter) - Math.abs(bCenter - viewportCenter);
+        })[0];
+      };
+
+      document.addEventListener('paste', (event) => {
+        const imageFiles = [...(event.clipboardData?.items || [])]
+          .filter((item) => item.kind === 'file' && item.type.startsWith('image/'))
+          .map((item) => item.getAsFile())
+          .filter(Boolean);
+        if (!imageFiles.length) return;
+        event.preventDefault();
+        const targetPanel = event.target.closest?.('[data-upload-panel]')
+          || document.querySelector(`[data-upload-panel="${activeUploadKey}"]`)
+          || nearestUploadPanel();
+        const gallery = targetPanel?.querySelector('.image-gallery');
+        if (!gallery) {
+          notify('没有找到截图区域，请先点击一个截图上传框。');
+          return;
+        }
+        activeUploadKey = targetPanel.dataset.uploadPanel;
+        document.querySelectorAll('.upload-panel').forEach((panel) => panel.classList.remove('active'));
+        document.querySelectorAll('.upload-zone').forEach((zone) => zone.classList.remove('active'));
+        targetPanel.classList.add('active');
+        targetPanel.querySelector('.upload-zone').classList.add('active');
+        readImages(imageFiles, gallery);
+        if (gallery.classList.contains('matrix-image-gallery')) {
+          notify('截图已更新；单元格内只保留最新一张，可继续 Ctrl+V 替换。');
+        } else {
+          notify(`已粘贴 ${imageFiles.length} 张截图，可继续 Ctrl+V 添加。`);
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        const image = event.target.closest?.('.image-card img');
+        if (image) openImageLightbox(image);
+      });
+
+      imageLightboxClose.addEventListener('click', closeImageLightbox);
+      imageLightbox.addEventListener('click', (event) => {
+        if (event.target === imageLightbox) closeImageLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && imageLightbox.classList.contains('open')) closeImageLightbox();
+      });
+
+      const normalizeForDownload = (clone) => {
+        const liveFields = document.querySelectorAll('input, textarea, select');
+        const cloneFields = clone.querySelectorAll('input, textarea, select');
+        liveFields.forEach((live, index) => {
+          const copy = cloneFields[index];
+          if (!copy) return;
+          if (copy.matches('select')) {
+            [...copy.options].forEach((option) => option.removeAttribute('selected'));
+            if (copy.options[live.selectedIndex]) copy.options[live.selectedIndex].setAttribute('selected', 'selected');
+          } else if (copy.type === 'file') {
+            copy.value = '';
+          } else if (copy.matches('textarea')) {
+            copy.textContent = live.value;
+          } else {
+            copy.setAttribute('value', live.value);
+          }
+        });
+        clone.querySelectorAll('.dragover').forEach((element) => element.classList.remove('dragover'));
+        clone.querySelectorAll('.upload-panel.active').forEach((element) => element.classList.remove('active'));
+        clone.querySelectorAll('.upload-zone.active').forEach((element) => element.classList.remove('active'));
+        clone.querySelectorAll('.status-message').forEach((element) => element.classList.remove('show'));
+        clone.querySelector('body')?.classList.remove('lightbox-open');
+        const clonedLightbox = clone.querySelector('#imageLightbox');
+        clonedLightbox?.classList.remove('open');
+        clonedLightbox?.setAttribute('aria-hidden', 'true');
+        clone.querySelector('#imageLightboxPreview')?.removeAttribute('src');
+        return clone;
+      };
+
+      const imageToDataUrl = async (source) => {
+        if (!source || source.startsWith('data:')) return source;
+        const response = await fetch(source);
+        if (!response.ok) throw new Error(`Image request failed: ${response.status}`);
+        const blob = await response.blob();
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(reader.error);
+          reader.readAsDataURL(blob);
+        });
+      };
+
+      const embedImagesForDownload = async (clone) => {
+        const liveImages = [...document.querySelectorAll('.image-card img')];
+        const clonedImages = [...clone.querySelectorAll('.image-card img')];
+        const failures = [];
+        await Promise.all(liveImages.map(async (image, index) => {
+          const copy = clonedImages[index];
+          if (!copy) return;
+          try {
+            copy.src = await imageToDataUrl(image.currentSrc || image.src);
+          } catch (error) {
+            failures.push(image.currentSrc || image.src);
+            console.warn('A screenshot could not be embedded in the downloaded HTML.', error);
+          }
+        }));
+        return failures;
+      };
+
+      const downloadCurrentHtml = async () => {
+        const clone = normalizeForDownload(document.documentElement.cloneNode(true));
+        const downloadButton = document.getElementById('downloadHtml');
+        downloadButton.disabled = true;
+        downloadButton.textContent = '正在打包截图…';
+        try {
+          const failures = await embedImagesForDownload(clone);
+          clone.dataset.reportId = `turboflow-geo-weekly-${Date.now()}`;
+          const serialized = '<!doctype html>\n' + clone.outerHTML;
+          const blob = new Blob([serialized], { type: 'text/html;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const start = document.getElementById('weekStart').value || 'week';
+          const end = document.getElementById('weekEnd').value || 'report';
+          const anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.download = `TurboFlow-GEO周报-${start}-${end}.html`;
+          document.body.appendChild(anchor);
+          anchor.click();
+          anchor.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 1200);
+          if (failures.length) notify(`HTML 已生成；其中 ${failures.length} 张截图未能嵌入，请与 assets 目录一起保存。`);
+          else notify('已生成可独立打开、包含当前文字和截图的 HTML 文件。');
+        } catch (error) {
+          console.error('The report could not be downloaded.', error);
+          notify('HTML 打包失败，请稍后重试。');
+        } finally {
+          downloadButton.disabled = false;
+          downloadButton.textContent = '下载当前 HTML';
+        }
+      };
+
+      let actionRowCount = document.querySelectorAll('[data-action-row]').length;
+      const createActionRow = (data = {}) => {
+        actionRowCount += 1;
+        const row = document.createElement('tr');
+        row.dataset.actionRow = '';
+        row.innerHTML = `
+          <td><select data-persist="action-type-${actionRowCount}"><option>下周计划</option><option>本周问题</option></select></td>
+          <td><input type="text" data-persist="action-content-${actionRowCount}" placeholder="填写问题或行动"></td>`;
+        row.querySelector('td:nth-child(1) select').value = data.type || '下周计划';
+        row.querySelector('td:nth-child(2) input').value = data.content || '';
+        document.getElementById('actionRows').appendChild(row);
+        return row;
+      };
+
+      const renderActionRows = (rows) => {
+        document.getElementById('actionRows').replaceChildren();
+        actionRowCount = 0;
+        rows.forEach(createActionRow);
+      };
+
+      document.getElementById('addActionRow').addEventListener('click', () => {
+        createActionRow();
+        scheduleAutoSave();
+      });
+
+      document.getElementById('addBacklinkRow').addEventListener('click', () => {
+        const row = createBacklinkRow();
+        row.querySelector('.backlink-category-input')?.focus();
+        scheduleAutoSave();
+      });
+
+      document.getElementById('addWebsiteUpdate').addEventListener('click', () => {
+        createWebsiteUpdateRow('');
+        document.querySelector('.website-update-row:last-child input')?.focus();
+        scheduleAutoSave();
+      });
+
+      document.getElementById('addHistoryReport').addEventListener('click', (event) => {
+        event.stopPropagation();
+        const row = createHistoryReportRow();
+        row.querySelector('.history-report-start')?.focus();
+        scheduleAutoSave();
+      });
+
+      document.getElementById('saveLocal').addEventListener('click', () => saveLocal(false));
+      document.getElementById('downloadHtml').addEventListener('click', downloadCurrentHtml);
+      document.getElementById('printReport').addEventListener('click', () => window.print());
+      document.getElementById('clearReport').addEventListener('click', async () => {
+        const confirmed = window.confirm('确定清空当前周报中的文字、数据和截图吗？此操作不会删除已经下载的 HTML 文件。');
+        if (!confirmed) return;
+        localStorage.removeItem(STORAGE_KEY);
+        await deleteStoredImages();
+        document.querySelectorAll('[data-persist]').forEach((element) => {
+          if (element.hasAttribute('data-editable-label')) element.innerHTML = element.dataset.defaultHtml || '';
+          else if (element.matches('input')) element.value = '';
+          else if (element.matches('select')) element.selectedIndex = 0;
+          else element.innerHTML = '';
+        });
+        document.querySelectorAll('.image-gallery').forEach((gallery) => gallery.replaceChildren());
+        document.querySelectorAll('.upload-panel.has-image').forEach((panel) => panel.classList.remove('has-image'));
+        document.querySelectorAll('[data-highlight-key]').forEach((cell) => {
+          cell.removeAttribute('data-highlight');
+          updateAiHighlightControls(cell);
+        });
+        renderWebsiteUpdates(['', '']);
+        renderBacklinkRows([]);
+        renderHistoryReports(DEFAULT_HISTORY_REPORTS);
+        renderActionRows([
+          { type: '本周问题' },
+          { type: '下周计划' },
+          { type: '下周计划' }
+        ]);
+        document.getElementById('weekStart').value = '';
+        document.getElementById('weekEnd').value = '';
+        setMatrixView('overview');
+        setDefaultWeek();
+        notify('当前周报已清空。');
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+          event.preventDefault();
+          saveLocal(false);
+        }
+      });
+
+      document.addEventListener('input', (event) => {
+        if (event.target.closest('[data-persist], .website-update-input, .backlink-editable, .history-report-input, #weekStart, #weekEnd')) scheduleAutoSave();
+      });
+
+      document.addEventListener('change', (event) => {
+        if (event.target.closest('[data-persist], .website-update-input, .backlink-editable, .history-report-input, #weekStart, #weekEnd')) scheduleAutoSave();
+      });
+
+      if (!document.querySelector('.website-update-row')) renderWebsiteUpdates(DEFAULT_WEBSITE_UPDATES);
+      loadLocal();
+      setDefaultWeek();
+      const syncBacklinkCount = () => {
+        const backlinkCount = backlinkTableBody?.querySelectorAll('tr').length || 0;
+        const backlinkMetric = document.querySelector('[data-backlink-total]');
+        const backlinkHeading = document.querySelector('.backlink-heading h3');
+        if (backlinkMetric) {
+          backlinkMetric.value = String(backlinkCount);
+          backlinkMetric.setAttribute('value', String(backlinkCount));
+        }
+        if (backlinkHeading) backlinkHeading.textContent = `发布回链明细（${backlinkCount} 条）`;
+      };
+      syncBacklinkCount();
+      if (backlinkTableBody) new MutationObserver(syncBacklinkCount).observe(backlinkTableBody, { childList: true });
+      scheduleAutoSave();
+    })();
+  </script>
+  <script>
+    (() => {
+      const formatValue = (control) => {
+        if (control.matches('select')) {
+          return control.options[control.selectedIndex]?.textContent.trim() || '—';
+        }
+        const value = control.value.trim();
+        if (!value) return '—';
+        return control.type === 'date' ? value.replaceAll('-', '/') : value;
+      };
+
+      const createReadonlyValue = (control) => {
+        if (control.type === 'file' || control.dataset.readonlySource !== undefined) return;
+
+        control.dataset.readonlySource = '';
+        control.disabled = true;
+        control.tabIndex = -1;
+
+        if (control.classList.contains('backlink-url-input')) {
+          const preview = control.closest('.backlink-url-editor')?.querySelector('.backlink-preview-link');
+          if (preview) preview.textContent = '打开链接';
+          return;
+        }
+
+        const value = document.createElement('span');
+        value.className = 'readonly-value';
+        value.textContent = formatValue(control);
+
+        if (control.classList.contains('history-report-url')) {
+          value.classList.add('history-report-url-value');
+        }
+
+        control.insertAdjacentElement('afterend', value);
+      };
+
+      const applyReadonlyView = () => {
+        document.querySelectorAll('[contenteditable]').forEach((element) => {
+          element.contentEditable = 'false';
+          element.removeAttribute('spellcheck');
+          element.removeAttribute('data-placeholder');
+          element.tabIndex = -1;
+        });
+
+        document.querySelectorAll('input, textarea, select').forEach(createReadonlyValue);
+        document.querySelectorAll('[data-upload-panel]').forEach((panel) => panel.removeAttribute('tabindex'));
+        document.querySelectorAll('.backlink-preview-link').forEach((link) => {
+          if (link.getAttribute('href') && link.getAttribute('href') !== '#') {
+            link.textContent = '打开链接';
+          }
+        });
+      };
+
+      applyReadonlyView();
+      requestAnimationFrame(applyReadonlyView);
+    })();
+  </script>
+</body>
+</html>
